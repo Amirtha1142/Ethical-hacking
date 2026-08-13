@@ -1,0 +1,20 @@
+Networking Fundamentals and Basic Reconnaissance:
+
+Networking concepts are important in cybersecurity because computers, servers, and other devices communicate through networks.
+An IP address is a unique address used to identify a device and enable communication over a network. 
+The Domain Name System (DNS) translates human-readable domain names into IP addresses so that users can access network services easily.
+
+A port is a logical communication endpoint used to identify specific services or applications on a device.
+Common examples include port 80 for HTTP, port 443 for HTTPS, port 22 for SSH, and port 53 for DNS.
+Protocols are sets of rules that define how devices communicate. Common networking protocols include HTTP, HTTPS, TCP, UDP, and DNS.
+
+Basic reconnaissance is the process of gathering publicly available information about a system or domain before authorized security testing.
+Common tools and commands include ping for checking network connectivity, nslookup for obtaining DNS information,
+tracert or traceroute for examining the network path to a destination, and whois for viewing available domain registration information.
+
+Network discovery tools such as Nmap can also be used in an authorized environment to identify hosts and examine available network services.
+These activities should only be performed on systems that are owned by the user or where explicit permission has been granted.
+
+Conclusion:
+Understanding IP addresses, DNS, ports, and protocols provides a strong foundation for cybersecurity. Basic reconnaissance helps
+security professionals understand an authorized target environment and gather relevant information before performing security assessments.
