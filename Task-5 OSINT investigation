@@ -1,0 +1,181 @@
+TASK 5 – OSINT INVESTIGATION
+
+Internship: VirtualWorks Lab
+Domain: Ethical Hacking and Cybersecurity
+Task ID: TASK5
+
+1. OBJECTIVE
+
+To conduct an Open Source Intelligence (OSINT) investigation by collecting and analyzing publicly available information about an authorized target. The investigation focuses on identifying digital footprints, examining domain information, discovering publicly exposed information, and understanding potential security risks.
+
+2. TOOLS USED
+
+- Kali Linux
+- Google Search
+- WHOIS
+- NSLookup
+- Nmap (for authorized follow-up assessment only)
+- theHarvester
+- OSINT Framework
+- crt.sh
+
+3. PRACTICAL IMPLEMENTATION
+
+Step 1: Information Gathering Using Google
+
+Google Search is used to collect publicly available information about the target domain.
+
+Command:
+
+site:example.com
+
+Purpose:
+
+- Identify publicly indexed web pages.
+- Collect publicly available website information.
+- Understand the organization's online presence.
+
+Step 2: Domain Information Using WHOIS
+
+WHOIS is used to collect domain registration information.
+
+Command:
+
+whois example.com
+
+Information examined:
+
+- Domain registrar
+- Domain creation date
+- Domain expiration date
+- Name servers
+- Registration status
+
+Step 3: DNS Information Gathering
+
+DNS lookup helps identify domain records and associated infrastructure.
+
+Commands:
+
+nslookup example.com
+
+nslookup -type=MX example.com
+
+nslookup -type=NS example.com
+
+Purpose:
+
+- Identify IP address records.
+- Examine mail exchange records.
+- Identify name server information.
+
+Step 4: Certificate Information Using crt.sh
+
+Website:
+
+https://crt.sh/
+
+Search for:
+
+example.com
+
+Purpose:
+
+- Examine publicly logged SSL/TLS certificates.
+- Identify domain names included in certificate records.
+- Understand certificate transparency.
+
+Step 5: Information Gathering Using theHarvester
+
+Check whether the tool is installed:
+
+theHarvester -h
+
+Install if necessary:
+
+sudo apt update
+sudo apt install theharvester
+
+Perform a passive search using a supported public source:
+
+theHarvester -d example.com -b crtsh
+
+Purpose:
+
+- Discover publicly indexed domain information.
+- Identify publicly discoverable subdomains.
+- Understand the organization's digital footprint.
+
+Step 6: Explore OSINT Framework
+
+Website:
+
+https://osintframework.com/
+
+OSINT Framework provides different resources for investigating publicly available information.
+
+Categories include:
+
+- Domain investigation
+- Email investigation
+- Username investigation
+- IP address investigation
+- Social media research
+- Public records
+
+4. DIGITAL FOOTPRINT ANALYSIS
+
+Digital footprints are traces of information that individuals or organizations leave behind while using the internet.
+
+The following areas were examined:
+
+1. Website information
+2. Domain registration details
+3. DNS records
+4. SSL certificate information
+5. Publicly indexed web pages
+6. Publicly discoverable subdomains
+7. Public organizational information
+
+5. FINDINGS AND OBSERVATIONS
+
+Investigation| Observation
+Google Search| Publicly indexed pages
+WHOIS| Domain registration information
+DNS Lookup| Available DNS records
+crt.sh| Public certificate records
+theHarvester| Publicly indexed domain information
+OSINT Framework| OSINT investigation resources
+
+Note: Actual findings must be recorded from the investigation. Example commands and expected observations are not verified scan results.
+
+6. SECURITY RECOMMENDATIONS
+
+1. Avoid publishing sensitive information on public websites.
+2. Regularly monitor publicly exposed information.
+3. Secure domain registration accounts.
+4. Configure DNS records properly.
+5. Maintain valid SSL/TLS certificates.
+6. Review publicly accessible subdomains.
+7. Monitor digital footprints regularly.
+8. Follow privacy and data protection practices.
+
+7. CONCLUSION
+
+The OSINT investigation demonstrates how publicly available information can be collected and analyzed using different cybersecurity tools and techniques.
+
+Through this exercise, I explored domain information gathering, DNS analysis, certificate transparency, search engine research, and digital footprint analysis.
+
+This task helped me understand how publicly available information can reveal details about an organization's online presence and why organizations should regularly monitor their digital footprints.
+
+8. ETHICAL CONSIDERATIONS
+
+- Conduct investigations only on authorized targets.
+- Use publicly available information.
+- Do not attempt unauthorized account access.
+- Do not collect or publish private personal information.
+- Avoid intrusive scanning or exploitation.
+- Respect privacy and applicable laws.
+
+---
+
